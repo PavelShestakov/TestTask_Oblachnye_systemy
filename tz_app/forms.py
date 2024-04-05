@@ -6,5 +6,5 @@ class StartForm(forms.ModelForm):
         model = Account
         fields = ['username']
         labels = {'text': ''}
-        #widgets = {'text': forms.Textarea(attrs={'cols': 80})} #окошечко для ввода текста
+    
 
