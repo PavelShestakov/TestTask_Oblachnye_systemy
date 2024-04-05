@@ -1,0 +1,42 @@
+клонируйте проект в заранее созданную папку tz_dir
+mkdir tz_dir
+
+
+создайте виртульное окружение в папке с проектом tz_dir
+cd ./tz_dir
+python3 -m venv venv
+
+активируйте виртуальное окружение
+source venv/bin/activate
+
+установите зависимости проекта
+python3 pip install -r requirements.txt
+
+выполните установку playwright chromium
+playwright install chromium
+
+Мигрируем базу данных
+python3 manage.py migrate
+
+Создаём суперпользователя
+python3 manage.py createsuperuser
+
+Запустите проект
+python3 manage.py runserver
+
+Перейдите в админку джанги, авторизуйтесь и добавьте данные для авторизации на сайте
+http://127.0.0.1:8000/admin/
+или
+http://127.0.0.1:8000/admin/tz_app/account/add/
+(данные тестового аккаунта)
+Email: paint.pik@yandex.ru
+Username: username_for_tz
+Password: test_password
+
+Перейдите на основную страницу
+http://127.0.0.1:8000/
+
+Введите в форму Username указанный ранее в админке username и нажмите "Начать"
+
+После выполнени всех функций образ браузера закроется через 30 секунд
+шаги выполнения программы будут прописываться в консоли

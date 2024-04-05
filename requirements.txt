@@ -1,0 +1,5 @@
+django
+pytest-playwright
+#выполнить playwright install chromium
+2captcha-python
+

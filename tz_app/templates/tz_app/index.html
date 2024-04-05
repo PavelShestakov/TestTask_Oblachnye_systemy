@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    {% block content %}
+        <p>Start page</p>
+        <form action="{% url 'tz_app:start' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button name="submit">Начать</button>
+        </form>
+    {% endblock content %}
+</body>
+</html>
