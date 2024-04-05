@@ -5,8 +5,7 @@ git clone https://github.com/PavelShestakov/TestTask_Oblachnye_systemy.git
 cd TestTask_Oblachnye_systemy
 
 
-создайте виртульное окружение в папке с проектом tz_dir
-cd ./tz_dir
+создайте виртульное окружение в папке с проектом TestTask_Oblachnye_systemy
 python3 -m venv venv
 
 активируйте виртуальное окружение
