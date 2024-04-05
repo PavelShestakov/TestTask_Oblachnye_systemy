@@ -5,6 +5,7 @@ from config import data_sitekey_main, url_main, WHOCAPTCHA_API_KEY
 
 
 def captcha_code():
+    """Функция возвращает код решенной капчи"""
     print("Solving Captcha")
     solver = TwoCaptcha(WHOCAPTCHA_API_KEY)
     print("Ожидание ответа с решением капчи...")
@@ -17,7 +18,7 @@ playwright = sync_playwright()
 url = "ru.stripchat.global"
 
 def main_auto_browser(playwright: Playwright, url: str, username: str, password: str) -> None:
-
+    """Осноаная функция автоматизации браузера"""
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
@@ -27,7 +28,7 @@ def main_auto_browser(playwright: Playwright, url: str, username: str, password:
     page.get_by_placeholder("Никнейм или имейл").fill(username)
     page.get_by_placeholder("Пароль").fill(password)
 
-    """Отправляем решеную капчу и входим на сайт"""
+    """Отправляет решеную капчу captcha_code() и входит на сайт"""
     page.evaluate(f'document.getElementById("g-recaptcha-response").innerHTML = "{captcha_code()}";')
     page.get_by_role("button", name="Войти").click()
 
@@ -44,6 +45,7 @@ def main_auto_browser(playwright: Playwright, url: str, username: str, password:
 
 
 def run_main(url: str, username: str, password: str):
+    """Функция запуска main_auto_browser для использования в tz_app/views.py"""
     with sync_playwright() as playwright:
         main_auto_browser(playwright, url=url, username=username, password=password)
 
