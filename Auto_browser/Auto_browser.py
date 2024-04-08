@@ -18,7 +18,7 @@ playwright = sync_playwright()
 url = "ru.stripchat.global"
 
 def main_auto_browser(playwright: Playwright, url: str, username: str, password: str) -> None:
-    """Осноаная функция автоматизации браузера"""
+    """Основная функция автоматизации браузера"""
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
