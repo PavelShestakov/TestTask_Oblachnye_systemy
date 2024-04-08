@@ -31,9 +31,7 @@ http://127.0.0.1:8000/admin/
 или
 http://127.0.0.1:8000/admin/tz_app/account/add/
 (данные тестового аккаунта)
-Email: paint.pik@yandex.ru
-Username: username_for_tz
-Password: test_password
+
 
 Перейдите на основную страницу
 http://127.0.0.1:8000/
